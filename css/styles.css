@@ -23,7 +23,13 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin: 2rem;
+  margin: 2rem 3rem;
+}
+
+@media (max-width: 540px) {
+  .header .logo {
+    margin: 0;
+  }
 }
 
 .header .logo .logo-text {
@@ -41,12 +47,20 @@ body {
 }
 
 .header .menu {
-  margin: 2rem;
+  margin: 2rem 3rem;
 }
 
-.home .bg-img img {
-  width: 100%;
+.home {
   height: 100vh;
+}
+
+.home .bg-img {
+  background-image: url(../img/adorable-animal-cat-730896.jpg);
+  width: 100%;
+  height: 100%;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .home .headline {
@@ -67,13 +81,26 @@ body {
   display: -ms-flexbox;
   display: flex;
   width: 100%;
-  padding: 0 10%;
+  padding: 0 3rem;
   color: white;
+}
+
+@media (max-width: 540px) {
+  .home .headline .container {
+    padding: 0 1rem;
+  }
 }
 
 .home .headline .container .section-title {
   -webkit-transform: rotate(-90deg);
           transform: rotate(-90deg);
+  padding-top: 2rem;
+}
+
+@media (max-width: 1023px) {
+  .home .headline .container .section-title {
+    display: none;
+  }
 }
 
 .home .headline .container .section-title p {
@@ -82,18 +109,42 @@ body {
   padding: 0 5px;
 }
 
+.home .headline .container .section-content {
+  margin-left: 3rem;
+}
+
+@media (max-width: 1023px) {
+  .home .headline .container .section-content {
+    margin-left: 0;
+  }
+}
+
 .home .headline .container .section-content p {
   font-size: 0.8rem;
   letter-spacing: 0.1em;
 }
 
 .home .headline .container .section-content h1 {
-  font-size: 5.4rem;
-  margin: 2rem 0;
+  font-size: 5.14rem;
+  font-weight: normal;
+  margin: 2rem 0 4rem 0;
+  line-height: 1;
+  letter-spacing: -0.05em;
+}
+
+@media (max-width: 540px) {
+  .home .headline .container .section-content h1 {
+    font-size: 3.2rem;
+  }
+}
+
+.home .headline .container .section-content h1 span {
+  color: #f3ca2f;
 }
 
 .home .headline .container .section-content .strip {
   border-bottom: 4px solid #f3ca2f;
   width: 150px;
+  margin-top: 2rem;
 }
 /*# sourceMappingURL=styles.css.map */

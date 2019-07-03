@@ -1,5 +1,20 @@
 @import url("https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap");
 
+$md: 1023px;
+$sm: 540px;
+
+@mixin md {
+    @media (max-width: #{$md}) {
+        @content;
+    }
+}
+
+@mixin sm {
+    @media (max-width: #{$sm}) {
+        @content;
+    }
+}
+
 body {
     margin: 0;
     font-family: "Poppins", sans-serif;
@@ -15,7 +30,10 @@ body {
     .logo {
         display: inline-flex;
         align-items: center;
-        margin: 2rem;
+        margin: 2rem 3rem;
+        @include sm {
+            margin: 0;
+        }
 
         .logo-text {
             margin-left: 1rem;
@@ -32,19 +50,20 @@ body {
     }
 
     .menu {
-        margin: 2rem;
+        margin: 2rem 3rem;
     }
 }
 
 .home {
-    .bg-img img {
+    height: 100vh;
+    .bg-img {
+        background-image: url(../img/adorable-animal-cat-730896.jpg);
         width: 100%;
-        height: 100vh;
+        height: 100%;
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
     }
-    // background-image: url(../img/beach-blue-skies-by-the-sea-934718.jpg);
-    // background-position: center;
-    // background-repeat: no-repeat;
-    // background-size: cover;
 
     .headline {
         position: absolute;
@@ -57,11 +76,19 @@ body {
         .container {
             display: flex;
             width: 100%;
-            padding: 0 10%;
+            padding: 0 3rem;
             color: white;
+            @include sm {
+                padding: 0 1rem;
+            }
 
             .section-title {
                 transform: rotate(-90deg);
+                padding-top: 2rem;
+                @include md {
+                    display: none;
+                }
+
                 p {
                     background: #f3ca2f;
                     text-transform: uppercase;
@@ -70,18 +97,34 @@ body {
             }
 
             .section-content {
+                margin-left: 3rem;
+                @include md {
+                    margin-left: 0;
+                }
+
                 p {
                     font-size: 0.8rem;
                     letter-spacing: 0.1em;
                 }
                 h1 {
-                    font-size: 5.4rem;
-                    margin: 2rem 0;
+                    font-size: 5.14rem;
+                    font-weight: normal;
+                    margin: 2rem 0 4rem 0;
+                    line-height: 1;
+                    letter-spacing: -0.05em;
+                    @include sm {
+                        font-size: 3.2rem;
+                    }
+
+                    span {
+                        color: #f3ca2f;
+                    }
                 }
 
                 .strip {
                     border-bottom: 4px solid #f3ca2f;
                     width: 150px;
+                    margin-top: 2rem;
                 }
             }
         }
