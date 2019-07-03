@@ -1,0 +1,15 @@
+body {
+    margin: 0;
+}
+
+.header {
+    position: fixed;
+    display: inline-flex;
+    justify-content: space-between;
+    width: 100%;
+    color: white;
+
+    .logo {
+        display: inline-flex;
+    }
+}
