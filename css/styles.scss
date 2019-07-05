@@ -20,6 +20,7 @@ body {
     font-family: "Poppins", sans-serif;
 }
 
+/*--- Header ---*/
 .header {
     position: fixed;
     display: inline-flex;
@@ -39,11 +40,9 @@ body {
             margin-left: 1rem;
 
             .logo {
-                font-size: 1.7rem;
                 margin: 0;
             }
             .sub-logo {
-                font-size: 0.8rem;
                 margin: 0;
             }
         }
@@ -54,10 +53,11 @@ body {
     }
 }
 
+/*--- Home ---*/
 .home {
     height: 100vh;
     .bg-img {
-        background-image: url(../img/adorable-animal-cat-730896.jpg);
+        background-image: url(../img/adorable-animal-cat-730896-min.jpg);
         width: 100%;
         height: 100%;
         background-position: center;
@@ -65,7 +65,7 @@ body {
         background-repeat: no-repeat;
     }
 
-    .headline {
+    .container-align-vertical {
         position: absolute;
         height: 70vh;
         top: 15vh;
@@ -73,52 +73,33 @@ body {
         display: flex;
         align-items: center;
 
-        .container {
-            display: flex;
-            width: 100%;
-            padding: 0 3rem;
+        .section-title {
+            transform: rotate(-90deg);
+            //padding-top: 2rem;
+            margin: 0 0 0 -20px;
             color: white;
+            @include md {
+                display: none;
+            }
+        }
+
+        .container {
+            position: absolute;
+            display: flex;
+            width: auto;
+            padding: 0 10rem;
+            color: white;
+            @include md {
+                padding: 0 5rem;
+            }
             @include sm {
                 padding: 0 1rem;
             }
 
-            .section-title {
-                transform: rotate(-90deg);
-                padding-top: 2rem;
-                @include md {
-                    display: none;
-                }
-
-                p {
-                    background: #f3ca2f;
-                    text-transform: uppercase;
-                    padding: 0 5px;
-                }
-            }
-
             .section-content {
-                margin-left: 3rem;
+                //margin-left: 3rem;
                 @include md {
                     margin-left: 0;
-                }
-
-                p {
-                    font-size: 0.8rem;
-                    letter-spacing: 0.1em;
-                }
-                h1 {
-                    font-size: 5.14rem;
-                    font-weight: normal;
-                    margin: 2rem 0 4rem 0;
-                    line-height: 1;
-                    letter-spacing: -0.05em;
-                    @include sm {
-                        font-size: 3.2rem;
-                    }
-
-                    span {
-                        color: #f3ca2f;
-                    }
                 }
 
                 .strip {
@@ -128,5 +109,223 @@ body {
                 }
             }
         }
+    }
+}
+
+/*--- Footer ---*/
+.footer {
+    color: white;
+    position: fixed;
+    bottom: 0;
+    display: inline-flex;
+    justify-content: space-between;
+    width: 100%;
+    @include sm {
+        display: block;
+        text-align: center;
+    }
+
+    .copyright {
+        margin-left: 3rem;
+        @include sm {
+            margin: 0;
+        }
+    }
+    .sosmed {
+        margin-right: 3rem;
+        @include sm {
+            margin: 0;
+        }
+
+        ul {
+            display: inline-flex;
+            padding: 0;
+            li {
+                list-style: none;
+                margin: 0 0.7rem;
+
+                a {
+                    text-transform: none;
+                    color: white;
+                }
+            }
+        }
+    }
+}
+
+/*--- Tentang Saya ---*/
+.about {
+    background-color: #272727;
+    height: 100vh;
+    @include sm {
+        padding: 5rem 0;
+    }
+
+    .container-align-vertical {
+        position: relative;
+        height: 70vh;
+        top: 15vh;
+        width: 100%;
+        display: flex;
+        align-items: center;
+
+        .section-title {
+            transform: rotate(-90deg);
+            margin: 0 0 0 -50px;
+            white-space: nowrap;
+            color: white;
+            @include md {
+                display: none;
+            }
+        }
+
+        .container {
+            position: absolute;
+            display: flex;
+            width: auto;
+            padding: 0 10rem;
+            color: white;
+            @include md {
+                padding: 0 5rem;
+            }
+            @include sm {
+                padding: 0 1rem;
+                display: inline;
+            }
+
+            .section-content {
+                display: flex;
+                justify-content: space-around;
+                align-items: center;
+                @include md {
+                    display: block;
+                }
+
+                .content-text {
+                    width: 50%;
+                    @include md {
+                        width: 100%;
+                    }
+                    .lead {
+                        font-size: 0.8rem;
+                        letter-spacing: 0.1em;
+                    }
+                    h1 {
+                        font-size: 5.14rem;
+                        font-weight: normal;
+                        margin: 2rem 0 4rem 0;
+                        line-height: 1;
+                        letter-spacing: -0.05em;
+                        @include sm {
+                            font-size: 3.2rem;
+                        }
+
+                        span {
+                            color: #f3ca2f;
+                        }
+                    }
+                }
+
+                .content-progress {
+                    width: 50%;
+                    padding-left: 10%;
+                    @include md {
+                        width: 70%;
+                        padding: 0;
+                        margin-top: 50px;
+                    }
+                    @include sm {
+                        width: 100%;
+                    }
+
+                    .content {
+                        display: flex;
+                        justify-content: space-between;
+                    }
+
+                    .progress {
+                        height: 8px;
+                        margin-bottom: 50px;
+                        overflow: hidden;
+                        background-color: #f5f5f5;
+                        border-radius: 4px;
+                        @include sm {
+                            margin-bottom: 25px;
+                        }
+
+                        .progress-bar {
+                            background-color: #f3ca2f;
+                            height: 100%;
+                            font-size: 12px;
+                            line-height: 20px;
+                            -webkit-box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.15);
+                            box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.15);
+                            transition: width 0.6s ease;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+/*--- Typography ---*/
+p.logo {
+    font-size: 1.7rem;
+}
+p.sub-logo {
+    font-size: 0.8rem;
+}
+
+p.lead {
+    font-size: 0.9rem;
+    letter-spacing: 0.1rem;
+}
+
+p.desc {
+    font-size: 0.8rem;
+    font-weight: 400;
+    letter-spacing: 0.025em;
+    line-height: 2.1428;
+    color: #7e7e7e;
+}
+
+p.vertical {
+    background: #f3ca2f;
+    text-transform: uppercase;
+    padding: 0 5px;
+}
+
+h1 {
+    font-size: 5.14rem;
+    font-weight: normal;
+    margin: 2rem 0 4rem 0;
+    line-height: 1;
+    letter-spacing: -0.05em;
+    @include sm {
+        font-size: 3.2rem;
+    }
+
+    span {
+        color: #f3ca2f;
+    }
+}
+
+h2 {
+    text-transform: uppercase;
+    letter-spacing: -0.025em;
+    line-height: 1.33333;
+    margin: 0 0 5rem;
+    font-size: 2.571rem;
+    font-weight: normal;
+    @include md {
+        margin: 0 0 2rem;
+    }
+    @include sm {
+        font-size: 1.5rem;
+    }
+
+    span {
+        color: #f3ca2f;
     }
 }
